@@ -43,14 +43,19 @@ down the source code into a sequence of tokens) is initialized with the input te
 (pos) to 0 and the current character (current_char) to the first character in the input text. Then In private 
 access specifier I have created data memers named text(string), pos(size_t), current_char(char).In the public 
 access specifier I have initialized several member functions:
+
 • void error() : This function called when the lexer encounters an invalid character. It throws a 
 runtime_error with the message "Invalid character".
+
 • void advance() : This function advances the lexer to the next character in the input text. If the end of 
 the input text is reached, it sets current_char to '\0' to indicate the end of the input.
+
 • void skip_whitespace() : This function skips over whitespace characters until a non-whitespace 
 character is encountered.
+
 • int integer() : This function extracts a sequence of digits from the input and converts them into an 
 integer.
+
 • Token get_next_token() : This function is the main driver for extracting tokens from the input. It uses 
 a series of if statements to check the current character and return the corresponding token. If none of 
 the expected characters is found, it calls the error method.
@@ -61,20 +66,26 @@ from the lexer using lexer.get_next_token(). The private members has a reference
 and the current token (Token current_token). The lexer is used to obtain tokens, and the current token keeps 
 track of the parser's position in the token stream. In the public members I have initialized several member 
 functions:
+
 • void error() : The function is called when a syntax error is encountered. 
+
 • void eat(TokenType expected_type) : This function is used to consume tokens. It checks if the type of 
 the current_token matches the expected type. If it does, the function advances to the next token by 
 calling lexer.get_next_token(). If there is a type mismatch, it calls the error function.
+
 • int factor() : This function parses a factor in the expression. It can be either an integer or an 
 expression enclosed in parentheses.
+
 • int term() : This function parses a term in the expression, which is a sequence of factors separated by 
 multiplication or division operators.
+
 • int expr() : This function parses an entire expression, which is a sequence of terms separated by 
 addition or subtraction operators.
+
 • int parse() : This function initiates the parsing process by calling the expr function. It returns the 
 result of parsing the entire expression.
 
-7) the main function for a basic Python-like compiler or interpreter designed for handling arithmetic 
+7) The main function for a basic Python-like compiler or interpreter designed for handling arithmetic 
 operations. It prompts the user for input, creates instances of a Lexer and a Parser to analyze and parse the 
 input, attempts to perform the parsing, and prints the result to the console if successful. In case of a parsing 
 error, it catches the exception, displays an error message, and exits with a non-zero return code. The program 
