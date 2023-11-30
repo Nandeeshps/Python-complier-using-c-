@@ -1,14 +1,15 @@
 # Python-complier-using-c-
-Compiler or Interpreter: Create a basic compiler 
+<b>Compiler or Interpreter: Create a basic compiler 
 or interpreter for a simple programming
 language, demonstrating knowledge of lexical 
-analysis and parsing.
+analysis and parsing.</b>
 
 ![OUTPUT](https://github.com/Nandeeshps/Python-complier-using-c-/assets/129992772/8b77b99c-25e6-493f-86cf-1495df793567)
 
 
 
-INTRODUCTION:
+<b>INTRODUCTION:</b>
+
 This assihmnet entails the creation of a basic Python compiler/interpreter in C++, emphasizing the integral 
 phases of lexical analysis and parsing. Leveraging C++ for its efficiency and versatility, the implementation 
 involves a lexer to tokenize the Python source code and a parser to construct the Abstract Syntax Tree (AST). 
@@ -22,17 +23,21 @@ STEPS:
 1)In the first step I have add the necessary header which are required for my assignment, those are 
 <iostream> which is used for input and output operations, and <cctype> which is used for character 
 classification functions like isspace and isdigit.
+
 2)In the next step I had written a line using namespace as std; , which brings the entire std (Standard C++ 
 Library) namespace into scope, allowing the use of standard C++ functions and objects without the std:: prefix.
+
 3)In next step I had defined a enumeration(means user defined datatype) called TokenType, which consists of 
 INTEGER{Represents an integer literal in the arithmetic expression.}, PLUS{Represents the addition operator},
 MINUS{Represents the subtraction operator}, MULTIPLY{Represents the multiplication operator},
 DIVIDE{Represents the division operator }, LPAREN{Represents a left parenthesis }, RPAREN{Represents a right 
 parenthesis}, EOF_TOKEN{Stands for "End of File Token" and might be used to signify the end of the input 
 stream or expression.}
+
 4)in the next step I had defined a stuct(user defined datatype that allows to group different types of variabbles 
 under a single name) named Token, which consists of TokenType which define enum and value which is of 
 datatype integer.
+
 5)Then I created a class named Lexer where then lexer(a component of a compiler or interpreter that breaks 
 down the source code into a sequence of tokens) is initialized with the input text, and it sets the initial position 
 (pos) to 0 and the current character (current_char) to the first character in the input text. Then In private 
@@ -49,6 +54,7 @@ integer.
 • Token get_next_token() : This function is the main driver for extracting tokens from the input. It uses 
 a series of if statements to check the current character and return the corresponding token. If none of 
 the expected characters is found, it calls the error method.
+
 6)In the next step I created another class named Paser, where The constructor initializes the parser with a 
 reference to a Lexer object. It also initializes the current_token member variable by getting the first token 
 from the lexer using lexer.get_next_token(). The private members has a reference to the lexer (Lexer& lexer) 
@@ -67,6 +73,7 @@ multiplication or division operators.
 addition or subtraction operators.
 • int parse() : This function initiates the parsing process by calling the expr function. It returns the 
 result of parsing the entire expression.
+
 7) the main function for a basic Python-like compiler or interpreter designed for handling arithmetic 
 operations. It prompts the user for input, creates instances of a Lexer and a Parser to analyze and parse the 
 input, attempts to perform the parsing, and prints the result to the console if successful. In case of a parsing 
